@@ -1,5 +1,5 @@
 # MiniProject2_Statistics
-Mini Project 2 - Statistics Calculations (Kelly, Nicole, Shannon)
+Mini Project 2 - Statistics Calculations (Kelley, Nicole, Shannon)
 
 #Task List
 ## Statistics Calculator Task List
