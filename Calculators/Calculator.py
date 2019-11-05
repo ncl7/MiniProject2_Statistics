@@ -1,26 +1,22 @@
-# Importing math module for square_root
-import math
-from Calculators.ZScore import zscore
-
-# defining the functions to be used in Statistics Class
+import Calculators
+from Calculators.PopulationMean import population_mean
 
 
-# Creating class calculator with mathematical functions
 class Calculator:
     result = 0
 
     def __init__(self):
         pass
 
-    def add(self, a, b):
-        self.result = addition(a, b)
+    def pop_mean(self, data):
+        self.result = Calculators.population_mean(data)
         return self.result
 
-    def subtract(self, a, b):
-        self.result = subtraction(a, b)
+    def med(self, data):
+        self.result = Calculators.median(data)
         return self.result
 
-    def zscore(self, a, b, c):
+    def z_score(self, a, b, c):
         self.result = zscore(a, b, c)
         return self.result
 
