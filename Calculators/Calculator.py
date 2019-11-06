@@ -1,5 +1,9 @@
-import Calculators
-from Calculators.PopulationMean import population_mean
+from Calculators.Addition import addition
+from Calculators.Subtraction import subtraction
+from Calculators.Multiplication import multiplication
+from Calculators.Division import division
+from Calculators.SquareRoot import square_root
+from Calculators.Squaring import square
 
 
 class Calculator:
@@ -8,25 +12,26 @@ class Calculator:
     def __init__(self):
         pass
 
-    def pop_mean(self, data):
-        self.result = Calculators.population_mean(data)
+    def add(self, a, b):
+        self.result = addition(a, b)
         return self.result
 
-    def med(self, data):
-        self.result = Calculators.median(data)
+    def subtract(self, a, b):
+        self.result = subtraction(a, b)
         return self.result
 
-    def z_score(self, a, b, c):
-        self.result = zscore(a, b, c)
+    def multiply(self, a, b):
+        self.result = multiplication(a, b)
         return self.result
 
+    def divide(self, a, b):
+        self.result = division(a, b)
+        return self.result
 
-class CSVStats(Calculator):
-    data = []
+    def squaring(self, a):
+        self.result = square(a)
+        return self.result
 
-    def __init__(self, data_file):
-        self.data = CsvReader(data_file)
-        pass
-
-    def mean(self):
-        mean(self.data)
+    def sqrt(self, a):
+        self.result = square_root(a)
+        return self.result
