@@ -1,5 +1,5 @@
 from Calculators.Calculator import Calculator
-from Calculators.ZScore import zscore
+from Calculators.ZScore import z_score
 from Calculators.ConfidenceInterval import confidence_interval
 from Calculators.PopulationVar import population_variance
 
@@ -10,8 +10,8 @@ class Statistics(Calculator):
     def __init__(self):
         pass
 
-    def zscore(self, a, b, c):
-        self.result = zscore(a, b, c)
+    def z_score(self):
+        self.result = z_score()
         return self.result
 
     def confidence_interval(self, a):
