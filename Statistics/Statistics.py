@@ -6,6 +6,7 @@ from Statistics.PopulationMean import population_mean
 from Statistics.Median import median
 from Statistics.Mode import mode
 from Statistics.VariancePopulationProportion import var_pop_proportion
+
 from CSVReader.CSVReader import CsvReader
 
 
