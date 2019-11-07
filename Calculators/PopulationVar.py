@@ -1,10 +1,7 @@
-# Population Variance
 from Calculators.PopulationMean import population_mean
+from Calculators.Calculator import add
 
 
-def population_variance(a, b, c):
-    a = float(population_mean)
-    # b = list(population data-points minus mean)
-    c = list(b^2)
-    d = (addition(c))/5000
+def population_variance(data):
+    d = square((add(data - population_mean)))/5000
     return d
