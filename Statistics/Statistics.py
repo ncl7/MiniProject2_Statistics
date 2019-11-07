@@ -1,5 +1,5 @@
 from Calculators.Calculator import Calculator
-from Statistics.ZScore import zscore
+from Calculators.ZScore import zscore
 
 
 class Statistics(Calculator):
