@@ -10,8 +10,8 @@ class Statistics(Calculator):
     def __init__(self):
         pass
 
-    def zscore(self, a, b, c):
-        self.result = zscore(a, b, c)
+    def zscore(self, d):
+        self.result = zscore(d)
         return self.result
 
     def confidence_interval(self, a):

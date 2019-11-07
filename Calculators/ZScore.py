@@ -1,9 +1,7 @@
 from Calculators.PopulationMean import population_mean
+from Calculators.sampleSTD import sampleSTD
 
 
-def zscore(a, b, c):
-    a = 500 # change to actual population number
-    b = population_mean
-    c = 0.5 # replace with standard deviation method
-    d = (a - b) / c
+def zscore(d):
+    d = (len(list) - population_mean) / sampleSTD
     return d
