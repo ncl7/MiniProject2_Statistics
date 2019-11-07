@@ -1,4 +1,4 @@
-from Calculators.PopulationMean import population_mean
+from Statistics.PopulationMean import population_mean
 from Calculators.Squaring import square
 
 
