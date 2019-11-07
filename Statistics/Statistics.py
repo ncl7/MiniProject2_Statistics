@@ -1,6 +1,6 @@
 from Calculators.Calculator import Calculator
 from Calculators.ZScore import zscore
-from Calculators.CI import confidence_interval
+from Calculators.ConfidenceInterval import confidence_interval
 
 class Statistics(Calculator):
     data = []
@@ -16,3 +16,4 @@ class Statistics(Calculator):
         self.result = confidence_interval(a)
         return self.result
 
+    def
