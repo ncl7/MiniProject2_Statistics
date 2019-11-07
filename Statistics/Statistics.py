@@ -10,7 +10,7 @@ class Statistics(Calculator):
     def __init__(self):
         pass
 
-    def zscore(self, d):
+    def z_score(self):
         self.result = zscore()
         return self.result
 
