@@ -1,6 +1,5 @@
 # Importing math module for square_root
 import math
-from Calculators.ZScore import zscore
 
 # defining the functions to be used in Statistics Class
 
@@ -18,10 +17,6 @@ class Calculator:
 
     def subtract(self, a, b):
         self.result = subtraction(a, b)
-        return self.result
-
-    def zscore(self, a, b, c):
-        self.result = zscore(a, b, c)
         return self.result
 
 
