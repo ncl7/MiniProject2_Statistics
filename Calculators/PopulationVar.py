@@ -3,5 +3,5 @@ from Calculators.Squaring import square
 
 
 def population_variance(data):
-    d = sum((square(data - population_mean)))/5000
+    d = sum((square(data - population_mean)))/len(list)
     return d
