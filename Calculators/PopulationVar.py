@@ -1,7 +1,7 @@
 from Calculators.PopulationMean import population_mean
-from Calculators.Calculator import add
+from Calculators.Squaring import square
 
 
 def population_variance(data):
-    d = square((add(data - population_mean)))/5000
+    d = sum((square(data - population_mean)))/5000
     return d
