@@ -11,7 +11,7 @@ class Statistics(Calculator):
         pass
 
     def zscore(self, d):
-        self.result = zscore(d)
+        self.result = zscore()
         return self.result
 
     def confidence_interval(self, a):
