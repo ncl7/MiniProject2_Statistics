@@ -5,7 +5,6 @@ from Calculators.Division import division
 from Calculators.Multiplication import multiplication
 
 
-
 def var_sample_proportion(data, sample_size):
     height = 0
     sample = sampleData(data, sample_size)
