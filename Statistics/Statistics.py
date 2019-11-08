@@ -43,3 +43,7 @@ class Statistics(Calculator):
     def population_variance(self):
         self.result = population_variance(self.data)
         return self.result
+
+    def pop_correlation_coefficient(self):
+        self.result = population_variance(self.data)
+        return self.result
