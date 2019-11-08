@@ -34,7 +34,7 @@ class Statistics(Calculator):
         return self.result
 
     def z_score(self):
-        self.result = z_score()
+        self.result = z_score(self.data)
         return self.result
 
     def confidence_interval(self, a):
