@@ -37,7 +37,7 @@ class Statistics(Calculator):
         return self.result
 
     def confidence_interval(self):
-        self.result = confidence_interval()
+        self.result = confidence_interval(self.data)
         return self.result
 
     def population_variance(self):
