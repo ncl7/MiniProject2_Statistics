@@ -3,7 +3,7 @@ from Statistics.Proportion import proportion
 from Calculators.Subtraction import subtraction
 from Calculators.Division import division
 from Calculators.Multiplication import multiplication
-from Calculators.Addition import addition
+
 
 
 def var_sample_proportion(data, sample_size):
