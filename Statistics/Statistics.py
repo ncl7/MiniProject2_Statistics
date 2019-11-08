@@ -15,7 +15,6 @@ class Statistics(Calculator):
 
     def __init__(self, filepath):
         self.data = CsvReader(filepath)
-        super().__init__()
 
     def pop_mean(self):
         self.result = population_mean(self.data)
