@@ -13,7 +13,7 @@ from CSVReader.CSVReader import CsvReader
 class Statistics(Calculator):
     data = []
 
-    def __init__(self):
+    def __init__(self, filepath):
         self.data = CsvReader(filepath)
         super().__init__()
 
@@ -37,8 +37,8 @@ class Statistics(Calculator):
         self.result = z_score(self.data)
         return self.result
 
-    def confidence_interval(self, a):
-        self.result = confidence_interval(a)
+    def confidence_interval(self):
+        self.result = confidence_interval()
         return self.result
 
     def population_variance(self):
