@@ -1,7 +1,7 @@
 from Statistics.PopulationMean import population_mean
+from Calculators.Subtraction import subtraction
 from Statistics.SampleStandardDeviation import sampleSTD
 from Calculators.Division import division
-from Calculators.Subtraction import subtraction
 
 
 def z_score(data):
