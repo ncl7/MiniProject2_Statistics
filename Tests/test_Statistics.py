@@ -8,21 +8,21 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.statistics = Statistics()
 
-    def test_instantiate_calculator(self):
+    def test_instantiate_statistics(self):
         self.assertIsInstance(self.statistics, Statistics)
 
     def test_pop_mean(self):
         test_data = CsvReader('Tests/Data/Data_Statistics_Calc.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_data:
-            self.assertEqual(self.statistics.pop_mean((test_data['Height'])))
+            self.assertEqual(self.statistics.pop_mean())
             self.assertEqual(self.statistics.result, test_result(row['Population Mean (Female)']))
 
     def test_median(self):
         test_data = CsvReader('Tests/Data/Data_Statistics_Calc.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_data:
-            self.assertEqual(self.statistics.med((test_data['Height'])))
+            self.assertEqual(self.statistics.med((test_data['Female'])))
             self.assertEqual(self.statistics.result, test_result(row['Median']))
 
     def test_mode(self):
