@@ -12,9 +12,11 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.statistics, Statistics)
         
     def test_pop_mean(self):
-        test_data = CsvReader('Tests/Data/female_height.csv').data
+        test_data = CsvReader("Tests/Data/female_height.csv").data
         for row in test_data:
             self.assertEqual(self.statistics.pop_mean())
+
+
 
 if __name__ == '__main__':
     unittest.main()
