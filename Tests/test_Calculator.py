@@ -17,22 +17,23 @@ class MyTestCase(unittest.TestCase):
         
 
     def test_subtraction(self):
-        test_data = CsvReader('./src/test_subtraction.csv').data
+        test_data = CsvReader('Tests/Data/test_subtraction.csv').data
         for row in test_data:
             self.assertEqual(self.calculator.subtract(int(row['Value 2']), int(row['Value 1'])), int(row['Result']))
             self.assertEqual(self.calculator.result, int(row['Result']))
 
     def test_addition(self):
-        add_data = CsvReader('Tests/Data/test_addition.csv').data
-        for row in add_data:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
+        test_data = CsvReader('Tests/Data/test_addition.csv').data
+        for row in test_data:
+            self.assertEqual(self.calculator.add(int(row['Value 1']), int(row['Value 2'])), int(row['Result']))
             self.assertEqual(self.calculator.result, int(row['Result']))
 
     def test_multiply(self):
         test_data = CsvReader('Tests/Data/test_multiplication.csv').data
         for row in test_data:
-            self.assertEqual(self.calculator.add(int(row['Value 1']), int(row['Value 2'])), int(row['Result']))
+            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
             self.assertEqual(self.calculator.result, int(row['Result']))
+
 
     def test_division(self):
         test_data = CsvReader('Tests/Data/test_division.csv').data
