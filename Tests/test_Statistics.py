@@ -10,7 +10,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
-
+        
     def test_pop_mean(self):
         test_data = CsvReader('Tests/Data/Data_Statistics_Calc.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
@@ -55,8 +55,6 @@ class MyTestCase(unittest.TestCase):
         for row in test_data:
             self.assertEqual(self.statistics.p_value(test_data(['Height'])))
             self.assertEqual(self.statistics.result, test_result(row['P Value']))
-
-
 
 
 
