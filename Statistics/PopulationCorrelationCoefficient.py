@@ -1,4 +1,4 @@
-from Statistics.SampleStandardDeviation import sample_st_dev
+from CSVReader.CSVReader import CsvReader
 from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Statistics.SampleMean import sampleMean
 from Statistics.PopulationMean import population_mean
@@ -8,10 +8,10 @@ from Calculators.Calculator import division
 
 
 def pop_correlation_coefficient(data):
-    # x = independent variable ("female_height_sample" sample data)
-    # y = dependent variable ("female_height" population data)
-    x = sample_st_dev(data)
-    y = pop_stand_dev(data)
+    x_data = CsvReader('Tests/Data/female_height.csv').data
+    y_data = CsvReader('Tests/Data/male_height.csv').data
+    x = pop_stand_dev(x_data)
+    y = pop_stand_dev(y_data)
     divisor = multiplication(x, y)
     z = len(data)
 
