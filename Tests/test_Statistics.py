@@ -16,7 +16,10 @@ class MyTestCase(unittest.TestCase):
         for row in test_data:
             self.assertEqual(self.statistics.pop_mean())
 
-
+    def test_z_score(self):
+        test_data = CsvReader("Tests/Data/female_height.csv").data
+        for row in test_data:
+            self.assertEqual(self.statistics.z_score())
 
 if __name__ == '__main__':
     unittest.main()
