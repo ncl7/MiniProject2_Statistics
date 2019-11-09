@@ -1,6 +1,22 @@
-import math
+from Calculators.Subtraction import subtraction
+from Calculators.Division import division
+from Statistics.sampleData import sampleData
+from Calculators.SquareRoot import square_root
+from Calculators.Squaring import square
+from Statistics.SampleMean import sampleMean
+from Calculators.Addition import addition
 
 
-def sampleSTD(s, i, x, n):
-    s = math.sqrt(sum(i - x) * (i - x) / (n - 1))
-    return s
+def sample_st_dev(data, sample_size):
+    dev = 0
+    sample = sampleData(data, sample_size)
+    sample_values = len(sample)
+    x_bar = sampleMean()
+    x = sample_values
+    n = subtraction(sample_values, 1)
+    for dev in sample:
+        dev = subtraction(x, x_bar)
+        square_x_bar = square(dev)
+        add = addition(square_x_bar, square_x_bar)
+        divide = division(add, n)
+    return square_root(divide)
