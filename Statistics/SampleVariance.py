@@ -12,6 +12,6 @@ def var_sample_proportion(data, sample_size):
     x = proportion(data)
     z = subtraction(1, x)
     y = subtraction(sample_values, 1)
-    for height in sample:
+    for height_el in sample:
         height = multiplication(x, z)
     return division(height, y)
