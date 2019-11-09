@@ -14,11 +14,10 @@ class MyTestCase(unittest.TestCase):
     def test_pop_mean(self):
         test_data = CsvReader('Tests/Data/Data_Statistics_Calc.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        pprint(test_data)
-        pprint(test_result)
+
         for row in test_data:
-            self.assertEqual(self.statistics.pop_mean(test_data(['Height'])))
-            self.assertEqual(self.statistics.result, test_result(row['Population Mean']))
+            self.assertEqual(self.statistics.pop_mean())
+            self.assertEqual(self.statistics.result, ())
 
     def test_proportion(self):
         test_data = CsvReader('Tests/Data/Data_Statistics_Calc.csv').data
