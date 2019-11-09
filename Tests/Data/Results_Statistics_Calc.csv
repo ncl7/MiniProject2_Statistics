@@ -1,2 +1,2 @@
-Population Mean,Median,Mode,Population SD,Variance of Population Proportion,ZScore,Population Correlation Coefficient,Confidence Interval,Population Variance,P Value,Proportion,Sample Mean,Sample SD,Variance of Sample Proportion,Population Size
-63.70877356,63.73092,61.21317,2.696284021,,1830.775686,,0.95,see tab,#N/A,0.455,,,,5000
+Population Mean (Female),Population Mean (Male),Median,Mode,Population SD (Female),Population SD (Male),Variance of Population Proportion,ZScore,Population Correlation Coefficient,Covariance,Confidence Interval,Population Variance,Proportion,Sample Mean,Sample SD,Variance of Sample Proportion
+63.70877356,69.02634588,63.73092,61.21317,2.696284021,2.863362228,0.000049595,0.108010296,-0.031878251,-0.246114056,0.95,7.26994752,0.455,63.72076123,2.724858715,0.000099458
