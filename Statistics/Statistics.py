@@ -1,5 +1,6 @@
 from Calculators.Calculator import Calculator
 from Statistics.ZScore import z_score
+from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Statistics.ConfidenceInterval import confidence_interval
 from Statistics.PopulationVariance import population_variance
 from Statistics.PopulationMean import population_mean
@@ -22,7 +23,7 @@ class Statistics(Calculator):
         super().__init__()
 
     def pop_mean(self):
-        self.result = population_mean(float(self.data))
+        self.result = population_mean(self.data)
         return self.result
 
     def med(self):
@@ -31,6 +32,10 @@ class Statistics(Calculator):
 
     def mod(self):
         self.result = mode(self.data)
+        return self.result
+
+    def population_st_dev(self):
+        self.result = pop_stand_dev(self.data)
         return self.result
 
     def variance_pop_proportion(self):
