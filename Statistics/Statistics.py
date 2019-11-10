@@ -19,8 +19,9 @@ class Statistics(Calculator):
     data = []
 
     def __init__(self):
-        self.data = CsvReader('Tests/Data/Data_Statistics_Calc.csv')
+        #self.data = CsvReader('Tests/Data/female_data.csv')
         super().__init__()
+        pass
 
     def pop_mean(self):
         self.result = population_mean(self.data)
