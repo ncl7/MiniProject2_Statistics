@@ -23,58 +23,58 @@ class Statistics(Calculator):
         super().__init__()
         pass
 
-    def pop_mean(self):
-        self.result = population_mean(self.data)
+    def pop_mean(self, data):
+        self.result = population_mean(data)
         return self.result
 
-    def med(self):
-        self.result = median(self.data)
+    def med(self, data):
+        self.result = median(data)
         return self.result
 
-    def mod(self):
-        self.result = mode(self.data)
+    def mod(self, data):
+        self.result = mode(data)
         return self.result
 
-    def population_st_dev(self):
-        self.result = pop_stand_dev(self.data)
+    def population_st_dev(self, data):
+        self.result = pop_stand_dev(data)
         return self.result
 
-    def variance_pop_proportion(self):
-        self.result = var_pop_proportion(self.data)
+    def variance_pop_proportion(self, data):
+        self.result = var_pop_proportion(data)
         return self.result
 
-    def z_score(self):
-        self.result = z_score(self.data)
+    def z_score(self, data):
+        self.result = z_score(data)
         return self.result
 
-    def confidence_interval(self):
-        self.result = confidence_interval(self.data)
+    def confidence_interval(self, data):
+        self.result = confidence_interval(data)
         return self.result
 
-    def population_variance(self):
-        self.result = population_variance(self.data)
+    def population_variance(self, data):
+        self.result = population_variance(data)
         return self.result
 
-    def pop_correlation_coefficient(self):
-        self.result = population_variance(self.data)
+    def pop_correlation_coefficient(self, data):
+        self.result = population_variance(data)
         return self.result
 
-    def proportion(self,):
+    def proportion(self, data):
         self.result = proportion()
         return self.result
 
-    def p_value(self,):
+    def p_value(self, data):
         self.result = p_value()
         return self.result
 
-    def sample_mean(self):
+    def sample_mean(self, data):
         self.result = sampleMean()
         return self.result
 
-    def sample_st_dev(self):
+    def sample_st_dev(self, data):
         self.result = sample_st_dev()
         return self.result
 
-    def var_sam_prop(self):
+    def var_sam_prop(self, data):
         self.result = var_sample_proportion()
         return self.result
