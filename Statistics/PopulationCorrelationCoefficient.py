@@ -1,6 +1,5 @@
 from CSVReader.CSVReader import CsvReader
 from Statistics.PopulationStandardDeviation import pop_stand_dev
-from Statistics.SampleMean import sampleMean
 from Statistics.PopulationMean import population_mean
 from Calculators.Calculator import multiplication
 from Calculators.Calculator import subtraction
@@ -16,8 +15,8 @@ def pop_correlation_coefficient(data):
     z = len(data)
 
     # Covariance calculation:
-    a = subtraction(data, sampleMean)
-    b = subtraction(data, population_mean)
+    a = subtraction(x_data, population_mean(x_data))
+    b = subtraction(y_data, population_mean(y_data))
     c = multiplication(a, b)
     covariance = division(z, (sum(c)))
 
