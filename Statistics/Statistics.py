@@ -19,7 +19,7 @@ class Statistics(Calculator):
     data = []
 
     def __init__(self):
-        self.data = CsvReader('Tests/Data/female_data.csv')
+        #self.data = CsvReader('Tests/Data/female_data.csv')
         super().__init__()
         pass
 
@@ -60,21 +60,21 @@ class Statistics(Calculator):
         return self.result
 
     def proportion(self, data):
-        self.result = proportion(data)
+        self.result = proportion()
         return self.result
 
     def p_value(self, data):
-        self.result = p_value(data)
+        self.result = p_value()
         return self.result
 
     def sample_mean(self, data):
-        self.result = sampleMean(data)
+        self.result = sampleMean()
         return self.result
 
     def sample_st_dev(self, data):
-        self.result = sample_st_dev(data)
+        self.result = sample_st_dev()
         return self.result
 
     def var_sam_prop(self, data):
-        self.result = var_sample_proportion(data)
+        self.result = var_sample_proportion()
         return self.result
