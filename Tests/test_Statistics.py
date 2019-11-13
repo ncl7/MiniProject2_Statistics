@@ -15,6 +15,7 @@ class MyTestCase(unittest.TestCase):
     def test_pop_mean(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
+        pprint(test_data)
         for row in test_result:
             self.assertEqual(self.statistics.pop_mean(test_data), float(row['Population Mean (Female)']))
             self.assertEqual(self.statistics.result, test_result['Population Mean (Female)'])
@@ -45,6 +46,8 @@ class MyTestCase(unittest.TestCase):
         test_data = CsvReader('Tests/Data/female_data.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_data:
+            self.assertEqual(self.statistics.population_st_dev(), float(row['Population SD (Female)']))
+            self.assertEqual(self.statistics.result, test_result(row['Population SD (Female)']))
 
     def test_proportion(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
@@ -77,8 +80,6 @@ class MyTestCase(unittest.TestCase):
     def test_p_value(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        pprint(test_data)
-        pprint(test_result)
         for row in test_data:
             self.assertEqual(self.statistics.p_value(), float(row['P Value']))
             self.assertEqual(self.statistics.result, test_result(row['P Value']))
@@ -89,7 +90,6 @@ class MyTestCase(unittest.TestCase):
         for row in test_data:
             self.assertEqual(self.statistics.z_score(), float(row['ZScore']))
             self.assertEqual(self.statistics.result, test_result(row['ZScore']))
-
 
 
 if __name__ == '__main__':
