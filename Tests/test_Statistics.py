@@ -45,8 +45,6 @@ class MyTestCase(unittest.TestCase):
         test_data = CsvReader('Tests/Data/female_data.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_data:
-            self.assertEqual(self.statistics.variance_pop_proportion(), float(row['Variance of Population Proportion']))
-            self.assertEqual(self.statistics.result, test_result(row['Population SD (Female)']))
 
     def test_proportion(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
@@ -91,6 +89,7 @@ class MyTestCase(unittest.TestCase):
         for row in test_data:
             self.assertEqual(self.statistics.z_score(), float(row['ZScore']))
             self.assertEqual(self.statistics.result, test_result(row['ZScore']))
+
 
 
 if __name__ == '__main__':
