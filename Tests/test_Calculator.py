@@ -1,6 +1,4 @@
 import unittest
-import Calculators
-import pprint
 from CSVReader.CSVReader import CsvReader
 from Calculators.Calculator import Calculator
 
@@ -11,10 +9,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, Calculator)
-
-    def test_subtraction(self):
-        test_data = CsvReader('Tests/Data/test_subtraction.csv').data
-        
 
     def test_subtraction(self):
         test_data = CsvReader('Tests/Data/test_subtraction.csv').data
@@ -31,9 +25,8 @@ class MyTestCase(unittest.TestCase):
     def test_multiply(self):
         test_data = CsvReader('Tests/Data/test_multiplication.csv').data
         for row in test_data:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
             self.assertEqual(self.calculator.result, int(row['Result']))
-
 
     def test_division(self):
         test_data = CsvReader('Tests/Data/test_division.csv').data
@@ -47,7 +40,6 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.squaring(int(row['Value 1'])), int(row['Result']))
             self.assertEqual(self.calculator.result, int(row['Result']))
 
-            
     def test_square_root(self):
         test_data = CsvReader('Tests/Data/test_square_root.csv').data
         for row in test_data:
