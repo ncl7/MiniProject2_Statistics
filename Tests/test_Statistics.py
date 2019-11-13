@@ -15,10 +15,9 @@ class MyTestCase(unittest.TestCase):
     def test_pop_mean(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        pprint(test_data)
         for row in test_result:
             self.assertEqual(self.statistics.pop_mean(test_data), float(row['Population Mean (Female)']))
-            self.assertEqual(self.statistics.result, test_result['Population Mean (Female)'])
+            #self.assertEqual(self.statistics.result, test_result['Population Mean (Female)'])
 
     def test_median(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
