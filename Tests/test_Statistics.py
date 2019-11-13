@@ -1,5 +1,6 @@
 import unittest
 from CSVReader.CSVReader import CsvReader
+from CSVReader.CSVStatsReader import CsvReaderStats
 from Statistics.Statistics import Statistics
 from pprint import pprint
 
@@ -12,18 +13,19 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.statistics, Statistics)
 
     def test_pop_mean(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        for row in test_data:
-            self.assertEqual(self.statistics.pop_mean())
-            self.assertEqual(self.statistics.result, test_result(row['Population Mean (Female)']))
+        pprint(test_data)
+        for row in test_result:
+            self.assertEqual(self.statistics.pop_mean(test_data), float(row['Population Mean (Female)']))
+            self.assertEqual(self.statistics.result, test_result['Population Mean (Female)'])
 
     def test_median(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         pprint(test_data)
         for row in test_data:
-            self.assertEqual(self.statistics.med(), float(row['Median']))
+            self.assertEqual(self.statistics.med(test_data), float(row['Median']))
             self.assertEqual(self.statistics.result, float(row['Median']))
 
     def test_mode(self):
@@ -44,7 +46,7 @@ class MyTestCase(unittest.TestCase):
         test_data = CsvReader('Tests/Data/female_data.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_data:
-            self.assertEqual(self.statistics.variance_pop_proportion(), float(row['Variance of Population Proportion']))
+            self.assertEqual(self.statistics.population_st_dev(), float(row['Population SD (Female)']))
             self.assertEqual(self.statistics.result, test_result(row['Population SD (Female)']))
 
     def test_proportion(self):
@@ -78,8 +80,6 @@ class MyTestCase(unittest.TestCase):
     def test_p_value(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        pprint(test_data)
-        pprint(test_result)
         for row in test_data:
             self.assertEqual(self.statistics.p_value(), float(row['P Value']))
             self.assertEqual(self.statistics.result, test_result(row['P Value']))

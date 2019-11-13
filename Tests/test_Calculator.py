@@ -1,6 +1,4 @@
 import unittest
-import Calculators
-import pprint
 from CSVReader.CSVReader import CsvReader
 from Calculators.Calculator import Calculator
 

@@ -3,8 +3,9 @@ from Calculators.Division import division
 
 
 def population_mean(data):
-    n = len(data)
+    new_data = [float(x) for x in data]
+    n = len(new_data)
     total = 0
-    for item in data:
+    for item in new_data:
         total = addition(total, item)
     return division(total, n)
