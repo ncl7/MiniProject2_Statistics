@@ -25,14 +25,14 @@ This repository is an example of how to calculate general statistics variables u
 ## Statistics Calculator Task List
 
 - [] Travis CI Build
-- [] CSV Reader Module
-- [] Statistics Module
-- [] Calculator Module
+- [X] CSV Reader Module
+- [X] Statistics Module
+- [X] Calculator Module
 - [] Throw Exceptions
 - [] Statistics Unit Tests - Passing
-- [] Calculator Unit Tests - Passing
+- [X] Calculator Unit Tests - Passing
 - [] CSV Reader Test - Passing
-- [] Calculator Blueprint
+- [X] Calculator Blueprint
 
 ## Definitions
 
