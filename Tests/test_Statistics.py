@@ -84,11 +84,19 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.result, test_result(row['P Value']))
 
     def test_z_score(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.z_score(test_data), float(row['ZScore']))
             self.assertEqual(self.statistics.result, test_result(row['ZScore']))
+
+    def test_confidence_interval(self):
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
+        test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
+        for row in test_result:
+            self.assertEqual(self.statistics.confidence_interval(test_data[0]), float(row['Confidence Interval (Lower)']))
+            self.assertEqual(self.statistics.confidence_interval(test_data[1]), float(row['Confidence Interval (Upper)']))
+            self.assertEqual(self.statistics.result, test_result(row['Confidence Interval (Lower)'], row['Confidence Interval (Upper)']))
 
 
 if __name__ == '__main__':

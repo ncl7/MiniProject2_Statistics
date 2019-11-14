@@ -1,12 +1,9 @@
-from Calculators.Addition import addition
 from Calculators.Division import division
-from Statistics.sampleData import sampleData
 
 
-def sampleMean(data, sample_size):
-    total = 0
-    sample = sampleData(data, sample_size)
-    sample_values = len(sample)
-    for value in sample:
-        total = addition(total, value)
-    return division(total, sample_values)
+def sampleMean(data):
+    data = [num for elem in data for num in elem]
+    new_data = [float(x) for x in data]
+    sample_data = new_data[0:999]
+    n = len(sample_data)
+    return round(division(n, sum(sample_data)), 8)
