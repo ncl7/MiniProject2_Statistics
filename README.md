@@ -11,18 +11,18 @@ Mini Project 2 - Statistics Calculations (Kelley, Nicole, Shannon)
 
 ## Calculations
 
-- [] Population Mean
-- [] Median
-- [] Mode
-- [] Population Standard Deviation
-- [] Variance of population proportion
+- [X] Population Mean
+- [X] Median
+- [X] Mode
+- [X] Population Standard Deviation
+- [X] Variance of population proportion
 - [] Z-Score
 - [] Standardized score
 - [] Population Correlation Coefficient
 - [] Confidence Interval
 - [] Population Variance
 - [] P Value
-- [] Proportion
+- [X] Proportion
 - [] Sample Mean
 - [] Sample Standard Deviation
 - [] Variance of sample proportion
