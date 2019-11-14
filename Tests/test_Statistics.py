@@ -44,9 +44,9 @@ class MyTestCase(unittest.TestCase):
     def test_var_pop_proportion(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        for row in test_data:
-            self.assertEqual(self.statistics.population_st_dev(), float(row['Population SD (Female)']))
-            self.assertEqual(self.statistics.result, test_result(row['Population SD (Female)']))
+        for row in test_result:
+            self.assertEqual(self.statistics.variance_pop_proportion(test_data), float(row['Var Population Prop']))
+           #self.assertEqual(self.statistics.result, test_result(row['Var Population Prop']))
 
     def test_proportion(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
