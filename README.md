@@ -11,21 +11,21 @@ Mini Project 2 - Statistics Calculations (Kelley, Nicole, Shannon)
 
 ## Calculations
 
-- [] Population Mean
-- [] Median
-- [] Mode
-- [] Population Standard Deviation
-- [] Variance of population proportion
-- [] Z-Score
-- [] Standardized score
-- [] Population Correlation Coefficient
-- [] Confidence Interval
-- [] Population Variance
-- [] P Value
-- [] Proportion
-- [] Sample Mean
-- [] Sample Standard Deviation
-- [] Variance of sample proportion
+- [X] Population Mean - Kelley
+- [X] Median - Kelley
+- [X] Mode - Kelley
+- [X] Population Standard Deviation - Kelley
+- [X] Variance of population proportion - Kelley
+- [] Z-Score - Nicole
+- [] Standardized score - Nicole
+- [] Population Correlation Coefficient - Nicole
+- [] Confidence Interval - Nicole
+- [] Population Variance - Nicole
+- [] P Value - Shannon
+- [X] Proportion - Shannon
+- [] Sample Mean - Shannon
+- [] Sample Standard Deviation - Shannon
+- [] Variance of sample proportion - Shannon
 
 ## Definitions
 

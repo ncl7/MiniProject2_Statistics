@@ -1,11 +1,13 @@
 from Statistics.PopulationMean import population_mean
-from Calculators.SquareRoot import square_root
+from Calculators.Calculator import square_root
 
 
 def pop_stand_dev(data):
-    n = len(data)
     u = population_mean(data)
-    return square_root(sum([(element - u) ** 2 for element in data]) / (len(data) - 1))
+    data = [num for elem in data for num in elem]
+    new_data = [float(x) for x in data]
+    leng = len(new_data)
+    return round(square_root(sum([(element - u) ** 2 for element in new_data]) / leng), 3)
 
 
 
