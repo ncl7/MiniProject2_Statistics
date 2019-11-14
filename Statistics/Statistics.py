@@ -60,21 +60,21 @@ class Statistics(Calculator):
         return self.result
 
     def proportion(self, data):
-        self.result = proportion()
+        self.result = proportion(data)
         return self.result
 
     def p_value(self, data):
-        self.result = p_value()
+        self.result = p_value(data)
         return self.result
 
     def sample_mean(self, data):
-        self.result = sampleMean()
+        self.result = sampleMean(data)
         return self.result
 
     def sample_st_dev(self, data):
-        self.result = sample_st_dev()
+        self.result = sample_st_dev(data)
         return self.result
 
     def var_sam_prop(self, data):
-        self.result = var_sample_proportion()
+        self.result = var_sample_proportion(data)
         return self.result
