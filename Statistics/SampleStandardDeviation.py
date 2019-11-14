@@ -11,7 +11,7 @@ def sample_st_dev(data, sample_size):
     dev = 0
     sample = sampleData(data, sample_size)
     sample_values = len(sample)
-    x_bar = sampleMean()
+    x_bar = sampleMean(data)
     x = sample_values
     n = subtraction(sample_values, 1)
     for dev in sample:
