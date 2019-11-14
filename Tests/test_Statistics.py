@@ -35,11 +35,11 @@ class MyTestCase(unittest.TestCase):
             #self.assertEqual(self.statistics.result, test_result(row['Mode']))
 
     def test_population_stand_deviation(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        for row in test_data:
-            self.assertEqual(self.statistics.population_st_dev(), float(row['Population SD (Female)']))
-            self.assertEqual(self.statistics.result, test_result(row['Population SD (Female)']))
+        for row in test_result:
+            self.assertEqual(self.statistics.population_st_dev(test_data), float(row['Population SD (Female)']))
+            #self.assertEqual(self.statistics.result, test_result(row['Population SD (Female)']))
 
     def test_var_pop_proportion(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
