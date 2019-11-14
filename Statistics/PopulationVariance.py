@@ -5,10 +5,12 @@ from Calculators.Division import division
 
 
 def population_variance(data):
-    u = population_mean(data)
-    deviations = subtraction(data, u)
+    data = [num for elem in data for num in elem]
+    new_data = [float(x) for x in data]
+    u = population_mean(new_data)
+    deviations = subtraction(new_data, u)
     sq_deviations = square(deviations)
-    x = len(data)
+    x = len(new_data)
     y = sum(sq_deviations)
     d = division(x, y)
     return d
