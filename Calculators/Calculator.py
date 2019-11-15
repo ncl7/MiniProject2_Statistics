@@ -1,11 +1,11 @@
-# Importing math module for square_root
-import math
-from Calculators.ZScore import zscore
+from Calculators.Addition import addition
+from Calculators.Subtraction import subtraction
+from Calculators.Multiplication import multiplication
+from Calculators.Division import division
+from Calculators.SquareRoot import square_root
+from Calculators.Squaring import square
 
-# defining the functions to be used in Statistics Class
 
-
-# Creating class calculator with mathematical functions
 class Calculator:
     result = 0
 
@@ -13,24 +13,25 @@ class Calculator:
         pass
 
     def add(self, a, b):
-        self.result = addition(a, b)
+        self.result = addition(float(a), float(b))
         return self.result
 
     def subtract(self, a, b):
-        self.result = subtraction(a, b)
+        self.result = subtraction(float(a), float(b))
         return self.result
 
-    def zscore(self, a, b, c):
-        self.result = zscore(a, b, c)
+    def multiply(self, a, b):
+        self.result = multiplication(float(a), float(b))
         return self.result
 
+    def divide(self, a, b):
+        self.result = division(float(a), float(b))
+        return self.result
 
-class CSVStats(Calculator):
-    data = []
+    def squaring(self, a):
+        self.result = square(float(a))
+        return self.result
 
-    def __init__(self, data_file):
-        self.data = CsvReader(data_file)
-        pass
-
-    def mean(self):
-        mean(self.data)
+    def sqrt(self, a):
+        self.result = square_root(float(a))
+        return self.result
