@@ -26,7 +26,7 @@ This repository is an example of how to calculate general statistics variables u
 
 ## Statistics Calculator Task List
 
-- [] Travis CI Build
+- [X] Travis CI Build
 - [X] CSV Reader Module
 - [X] Statistics Module
 - [X] Calculator Module
