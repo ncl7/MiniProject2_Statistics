@@ -69,11 +69,11 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.statistics.result, test_result(row['Sample SD']))
 
     def test_sample_var_prop(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.var_sam_prop(test_data), float(row['Variance of Sample Proportion']))
-            self.assertEqual(self.statistics.result, test_result(row['Variance of Sample Proportion']))
+            #self.assertEqual(self.statistics.result, test_result(row['Variance of Sample Proportion']))
 
     def test_p_value(self):
         test_data = CsvReader('Tests/Data/female_data.csv').data
