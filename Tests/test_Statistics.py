@@ -45,28 +45,28 @@ class MyTestCase(unittest.TestCase):
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.variance_pop_proportion(test_data), float(row['Var Population Prop']))
-        # self.assertEqual(self.statistics.result, test_result(row['Var Population Prop']))
+            #self.assertEqual(self.statistics.result, test_result(row['Var Population Prop']))
 
     def test_proportion(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.proportion(test_data), float(row['Proportion']))
-            # self.assertEqual(self.statistics.result, test_result(row['Proportion']))
+            #self.assertEqual(self.statistics.result, test_result(row['Proportion']))
 
     def test_sample_mean(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        for row in test_data:
+        for row in test_result:
             self.assertEqual(self.statistics.sample_mean(test_data), float(row['Sample Mean']))
-            self.assertEqual(self.statistics.result, test_result(row['Sample Mean']))
+            #self.assertEqual(self.statistics.result, test_result(row['Sample Mean']))
 
     def test_sample_st_dev(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        for row in test_data:
+        for row in test_result:
             self.assertEqual(self.statistics.sample_st_dev(test_data), float(row['Sample SD']))
-            self.assertEqual(self.statistics.result, test_result(row['Sample SD']))
+            #self.assertEqual(self.statistics.result, test_result(row['Sample SD']))
 
     def test_sample_var_prop(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
@@ -76,18 +76,18 @@ class MyTestCase(unittest.TestCase):
             #self.assertEqual(self.statistics.result, test_result(row['Variance of Sample Proportion']))
 
     def test_p_value(self):
-        test_data = CsvReader('Tests/Data/female_data.csv').data
+        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.p_value(test_data), float(row['P Value']))
-            self.assertEqual(self.statistics.result, test_result(row['P Value']))
+            #self.assertEqual(self.statistics.result, test_result(row['P Value']))
 
     def test_z_score(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.z_score(test_data), float(row['ZScore']))
-            self.assertEqual(self.statistics.result, test_result(row['ZScore']))
+            #self.assertEqual(self.statistics.result, test_result(row['ZScore']))
 
     def test_confidence_interval(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
@@ -106,10 +106,10 @@ class MyTestCase(unittest.TestCase):
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.population_variance(test_data), float(row['Population Variance']))
-            # self.assertEqual(self.statistics.result, test_result(row['Population Variance']))
+            #self.assertEqual(self.statistics.result, test_result(row['Population Variance']))
 
     def test_pop_correlation_coefficient(self):
-        test_data = CsvReader('Tests/Data/female_height.csv')
+        test_data = CsvReaderStats('Tests/Data/female_height.csv')
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
             self.assertEqual(self.statistics.pop_correlation_coefficient(test_data),
