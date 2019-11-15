@@ -18,7 +18,7 @@ This repository is an example of how to calculate general statistics variables u
 - [] Population Variance - Nicole
 - [] P Value - Shannon
 - [X] Proportion - Shannon
-- [] Sample Mean - Shannon
+- [X] Sample Mean - Shannon
 - [] Sample Standard Deviation - Shannon
 - [] Variance of sample proportion - Shannon
 
