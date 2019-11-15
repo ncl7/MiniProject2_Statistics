@@ -1,6 +1,5 @@
 from Calculators.Division import division
 
-
 def sampleMean(data):
     data = [num for elem in data for num in elem]
     new_data = [float(x) for x in data]
