@@ -1,6 +1,6 @@
 from Calculators.Subtraction import subtraction
 from Calculators.Division import division
-from Statistics.sampleData import sampleData
+from Statistics.sampleData import getSample
 from Calculators.SquareRoot import square_root
 from Calculators.Squaring import square
 from Statistics.SampleMean import sampleMean

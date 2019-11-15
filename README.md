@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jeanshanchik/MiniProject2_Statistics.svg?branch=master)](https://travis-ci.org/jeanshanchik/MiniProject2_Statistics)
+
 # MiniProject2_Statistics
 Mini Project 2 - Statistics Calculations (Kelley, Nicole, Shannon)
 
@@ -24,7 +26,7 @@ This repository is an example of how to calculate general statistics variables u
 
 ## Statistics Calculator Task List
 
-- [] Travis CI Build
+- [X] Travis CI Build
 - [X] CSV Reader Module
 - [X] Statistics Module
 - [X] Calculator Module
@@ -37,3 +39,4 @@ This repository is an example of how to calculate general statistics variables u
 ## Definitions
 
 Definitions related to this repository can be found here.
+

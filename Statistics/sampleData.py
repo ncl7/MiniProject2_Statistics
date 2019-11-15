@@ -1,6 +1,5 @@
 from random import random
 
-
-def sampleData(data, sample_size):
-    random_sample = random.sample(data, k=sample_size)
-    return random_sample
+def getSample(data, sample_size):
+    random_values = random.sample(data, k=sample_size)
+    return random_values

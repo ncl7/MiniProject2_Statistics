@@ -1,13 +1,12 @@
-from Statistics.sampleData import sampleData
+from Statistics.Statistics import sampleMean
 from Statistics.Proportion import proportion
 from Calculators.Subtraction import subtraction
 from Calculators.Division import division
 from Calculators.Multiplication import multiplication
 
 
-def var_sample_proportion(data, sample_size):
-    height = 0
-    sample = sampleData(data, sample_size)
+def var_sample_proportion(data):
+    sample = sampleMean(data)
     sample_values = len(sample)
     x = proportion(data)
     z = subtraction(1, x)
