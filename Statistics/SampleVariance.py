@@ -1,4 +1,4 @@
-from Statistics.Statistics import sampleMean
+from Statistics.SampleMean import sampleMean
 from Statistics.Proportion import proportion
 from Calculators.Subtraction import subtraction
 from Calculators.Division import division
