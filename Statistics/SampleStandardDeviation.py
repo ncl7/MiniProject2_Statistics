@@ -9,7 +9,7 @@ from Calculators.Addition import addition
 
 def sample_st_dev(data, sample_size):
     dev = 0
-    sample = sampleData(data, sample_size)
+    sample = getSample(data, sample_size)
     sample_values = len(sample)
     x_bar = sampleMean()
     x = sample_values

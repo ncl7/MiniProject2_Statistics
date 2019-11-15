@@ -1,8 +1,8 @@
-from Statistics.Statistics import sampleMean
 from Statistics.Proportion import proportion
 from Calculators.Subtraction import subtraction
 from Calculators.Division import division
 from Calculators.Multiplication import multiplication
+from Statistics.SampleMean import sampleMean
 
 
 def var_sample_proportion(data):
