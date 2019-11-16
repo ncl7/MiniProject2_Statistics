@@ -28,8 +28,8 @@ This repository is an example of how to calculate general statistics variables u
 - [] P Value - Shannon
 - [X] Proportion - Shannon
 - [X] Sample Mean - Shannon
-- [] Sample Standard Deviation - Shannon
-- [] Variance of sample proportion - Shannon
+- [X] Sample Standard Deviation - Shannon
+- [X] Variance of sample proportion - Shannon
 
 ## Statistics Calculator Task List
 
@@ -37,10 +37,9 @@ This repository is an example of how to calculate general statistics variables u
 - [X] CSV Reader Module
 - [X] Statistics Module
 - [X] Calculator Module
-- [] Throw Exceptions
 - [] Statistics Unit Tests - Passing
 - [X] Calculator Unit Tests - Passing
-- [] CSV Reader Test - Passing
+- [X] CSV Reader Test - Passing
 - [X] Calculator Blueprint
 
 ## Definitions

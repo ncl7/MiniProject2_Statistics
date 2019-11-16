@@ -16,10 +16,10 @@ def pop_correlation_coefficient(data):
     z = len(new_x_data)
 
     # Covariance calculation:
-    a = subtraction(new_x_data, population_mean(new_x_data))
-    b = subtraction(new_y_data, population_mean(new_y_data))
+    a = subtraction(x_data, population_mean(x_data))
+    b = subtraction(y_data, population_mean(y_data))
     c = multiplication(a, b)
-    covariance = division(z, (sum(c)))
+    covariance = division(x_length, (sum(c)))
 
     # Population Correlation Coefficient calculation:
     d = division(divisor, covariance)

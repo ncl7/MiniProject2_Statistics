@@ -13,3 +13,5 @@ class CsvReaderStats:
             csv_data = csv.reader(list_data, delimiter=',')
             for row in csv_data:
                 self.data.append(row)
+            self.data = [num for elem in self.data for num in elem]
+            self.data = [float(x) for x in self.data]

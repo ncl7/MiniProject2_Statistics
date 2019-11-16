@@ -118,6 +118,7 @@ class MyTestCase(unittest.TestCase):
                                        'Correlation '
                                        'Coefficient']))
             self.assertEqual(self.statistics.pop_correlation_coefficient(test_data_m),
+
                              float(row['Population '
                                        'Correlation '
                                        'Coefficient']))
