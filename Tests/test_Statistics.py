@@ -113,15 +113,15 @@ class MyTestCase(unittest.TestCase):
         test_data_m = CsvReaderStats('Tests/Data/male_height.csv')
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
-            self.assertEqual(self.statistics.pop_correlation_coefficient(test_data_f),
+            self.assertEqual(self.statistics.pop_correlation_coefficient(test_data_f, test_data_m),
                              float(row['Population '
                                        'Correlation '
                                        'Coefficient']))
-            self.assertEqual(self.statistics.pop_correlation_coefficient(test_data_m),
-                             float(row['Population '
-                                       'Correlation '
-                                       'Coefficient']))
-            self.assertEqual(self.statistics.result, test_result(row['Population Correlation Coefficient']))
+            #self.assertEqual(self.statistics.pop_correlation_coefficient(test_data_m),
+            #                 float(row['Population '
+            #                           'Correlation '
+            #                           'Coefficient']))
+            #self.assertEqual(self.statistics.result, test_result(row['Population Correlation Coefficient']))
 
 
 if __name__ == '__main__':

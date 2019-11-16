@@ -5,9 +5,9 @@ from Calculators.Calculator import subtraction
 from Calculators.Calculator import division
 
 
-def pop_correlation_coefficient(data):
-    x_data = [num for elem in data for num in elem]
-    y_data = [num for elem in data for num in elem]
+def pop_correlation_coefficient(data_x, data_y):
+    x_data = [num for elem in data_x for num in elem]
+    y_data = [num for elem in data_y for num in elem]
     new_x_data = [float(x) for x in x_data]
     new_y_data = [float(x) for x in y_data]
     x = pop_stand_dev(new_x_data)
