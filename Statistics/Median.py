@@ -2,9 +2,9 @@ from Calculators.Calculator import addition, division
 
 
 def median(data):
-    data = [num for elem in data for num in elem]
-    new_data = [float(x) for x in data]
-    new_data = sorted(new_data)
+    #data = [num for elem in data for num in elem]
+    #new_data = [float(x) for x in data]
+    new_data = sorted(data)
     length = len(new_data)
     if length < 1:
         return None

@@ -109,10 +109,11 @@ class MyTestCase(unittest.TestCase):
             #self.assertEqual(self.statistics.result, test_result(row['Population Variance']))
 
     def test_pop_correlation_coefficient(self):
-        test_data = CsvReaderStats('Tests/Data/female_height.csv')
+        test_data_f = CsvReaderStats('Tests/Data/female_height.csv')
+        test_data_m = CsvReaderStats('Tests/Data/male_height.csv')
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
-            self.assertEqual(self.statistics.pop_correlation_coefficient(test_data),
+            self.assertEqual(self.statistics.pop_correlation_coefficient(test_data_f, test_data_m),
                              float(row['Population '
                                        'Correlation '
                                        'Coefficient']))

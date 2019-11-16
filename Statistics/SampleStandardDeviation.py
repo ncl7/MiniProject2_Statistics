@@ -1,7 +1,3 @@
-from Calculators.Subtraction import subtraction
-from Calculators.Division import division
-from Calculators.SquareRoot import square_root
-from Calculators.Squaring import square
 from Statistics.SampleMean import sampleMean
 from Calculators.Addition import addition
 
