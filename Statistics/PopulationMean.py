@@ -3,4 +3,5 @@ from Calculators.Division import division
 
 def population_mean(data):
     n = len(data)
-    return round(division(n, sum(data)), 8)
+    sum_total = sum(data)
+    return round(division(n, sum_total), 8)

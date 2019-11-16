@@ -4,9 +4,7 @@ from Calculators.Addition import addition
 
 def sample_st_dev(data):
     mean = sampleMean(data)
-    data = [num for elem in data for num in elem]
-    new_data = [float(x) for x in data]
-    sample_data = new_data[0:999]
+    sample_data = data[0:999]
     tot = 0.0
     for x in sample_data:
         tot = addition(tot, (x - mean)**2)
