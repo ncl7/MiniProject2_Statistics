@@ -45,5 +45,6 @@ This repository is an example of how to calculate general statistics variables u
 
 ## Definitions
 
-Definitions related to this assignment can be found [here](https://github.com/Shannon-NJIT/MiniProject1).
+Definitions related to this assignment can be found [here](https://github.com/Shannon-NJIT/MiniProject1). 
+See terms 10-25 in the Contents table.
 
