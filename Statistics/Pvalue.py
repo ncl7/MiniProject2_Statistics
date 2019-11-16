@@ -1,4 +1,4 @@
-from Statistics.ZScore import z_score
+from Statistics.Z_Score import z_score
 
 
 def p_value(data):

@@ -1,5 +1,5 @@
 from Calculators.Calculator import Calculator
-from Statistics.ZScore import z_score
+from Statistics.Z_Score import z_score
 from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Statistics.ConfidenceInterval import confidence_interval
 from Statistics.PopulationVariance import population_variance
