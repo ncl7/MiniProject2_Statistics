@@ -17,5 +17,7 @@ def confidence_interval(data):
     margin_of_error = multiplication(z_value, y)
     a = subtraction(mean, margin_of_error)
     b = addition(mean, margin_of_error)
-    return a, b
+    array = []
+    c = array[a, b]
+    return c
 

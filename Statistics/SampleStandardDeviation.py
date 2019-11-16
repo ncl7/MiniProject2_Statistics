@@ -9,7 +9,3 @@ def sample_st_dev(data):
     for x in sample_data:
         tot = addition(tot, (x - mean)**2)
     return round((tot/(len(sample_data) - 1))**0.5, 2)
-
-
-
-

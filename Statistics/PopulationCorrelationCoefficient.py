@@ -5,11 +5,15 @@ from Calculators.Calculator import subtraction
 from Calculators.Calculator import division
 
 
-def pop_correlation_coefficient(x_data, y_data):
-    st_x = pop_stand_dev(x_data)
-    st_y = pop_stand_dev(y_data)
-    divisor = multiplication(st_x, st_y)
-    x_length = len(x_data)
+def pop_correlation_coefficient(data):
+    x_data = [num for elem in data for num in elem]
+    y_data = [num for elem in data for num in elem]
+    new_x_data = [float(x) for x in x_data]
+    new_y_data = [float(x) for x in y_data]
+    x = pop_stand_dev(new_x_data)
+    y = pop_stand_dev(new_y_data)
+    divisor = multiplication(x, y)
+    z = len(new_x_data)
 
     # Covariance calculation:
     a = subtraction(x_data, population_mean(x_data))
