@@ -1,5 +1,5 @@
 import csv
-from Fileutilities.absolutepath import absolutepath
+from Fileutilities.absolutepath import absolute_path
 
 
 class CsvReaderStats:
@@ -9,7 +9,7 @@ class CsvReaderStats:
 
     def __init__(self, filepath):
         self.data = []
-        with open(absolutepath(filepath)) as list_data:
+        with open(absolute_path(filepath)) as list_data:
             csv_data = csv.reader(list_data, delimiter=',')
             for row in csv_data:
                 self.data.append(row)
