@@ -5,6 +5,7 @@ def p_value(data):
     # data = [data]
     n = len(data)
     score = z_score(data)
+    # score = 0.56425684
     for index in range(n):
         if n == score:
             data.append(index)
