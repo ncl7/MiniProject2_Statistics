@@ -20,8 +20,8 @@ This repository is an example of how to calculate general statistics variables u
 - [X] Mode - Kelley
 - [X] Population Standard Deviation - Kelley
 - [X] Variance of population proportion - Kelley
-- [x] Z-Score - Nicole
-- [ ] Standardized score - Nicole
+- [ ] Z-Score - Nicole
+- [ ]
 - [ ] Population Correlation Coefficient - Nicole
 - [ ] Confidence Interval - Nicole
 - [X] Population Variance - Nicole
