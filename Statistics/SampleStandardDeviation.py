@@ -7,18 +7,15 @@ from Calculators.Addition import addition
 
 
 def sample_st_dev(data):
-
+    mean = sampleMean(data)
     data = [num for elem in data for num in elem]
     new_data = [float(x) for x in data]
     sample_data = new_data[0:999]
-    n = len(sample_data)
-    x_bar = sampleMean(sample_data)
+    tot = 0.0
+    for x in sample_data:
+        tot = addition(tot, (x - mean)**2)
+    return round((tot/(len(sample_data) - 1))**0.5, 2)
 
-    for dev in n:
 
-        dev = subtraction(n, x_bar)
-        square_x_bar = square(dev)
-        add = addition(square_x_bar, square_x_bar)
-        divide = division(add, n)
-    return round(square_root(divide), 8)
+
 
