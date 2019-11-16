@@ -19,7 +19,7 @@ def pop_correlation_coefficient(data):
     a = subtraction(x_data, population_mean(x_data))
     b = subtraction(y_data, population_mean(y_data))
     c = multiplication(a, b)
-    covariance = division(x_length, (sum(c)))
+    covariance = division(z, (sum(c)))
 
     # Population Correlation Coefficient calculation:
     d = division(divisor, covariance)

@@ -121,7 +121,7 @@ class MyTestCase(unittest.TestCase):
                              float(row['Population '
                                        'Correlation '
                                        'Coefficient']))
-            #self.assertEqual(self.statistics.result, test_result(row['Population Correlation Coefficient']))
+            self.assertEqual(self.statistics.result, test_result(row['Population Correlation Coefficient']))
 
 
 if __name__ == '__main__':
