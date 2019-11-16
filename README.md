@@ -8,7 +8,7 @@ Mini Project 2 - Statistics Calculations (Kelley, Nicole, Shannon)
 
 - [x] Exception, Unit Test, Constructor, Factory, Decorator, Extend Class, CSV Files, Reading Files (Shannon)
 - [x] How Python uses Identation to control Flow, Don't Repeat Yourself, Design Patterns, Class, Object, Static, Property/Attribute, Method (Nicole)
-- [] Calculator Blueprint (Kelly)
+- [X] Calculator Blueprint (Kelley)
 
 ## Overview
 This repository is an example of how to calculate general statistics variables using classes, decorators, and unittesting. The data used is female height data in the United States which was retrieved from: https://www.kaggle.com/mustafaali96/weight-height 
@@ -20,12 +20,11 @@ This repository is an example of how to calculate general statistics variables u
 - [X] Mode - Kelley
 - [X] Population Standard Deviation - Kelley
 - [X] Variance of population proportion - Kelley
-- [x] Z-Score - Nicole
-- [x] Standardized score - Nicole
-- [x] Population Correlation Coefficient - Nicole
-- [x] Confidence Interval - Nicole
-- [x] Population Variance - Nicole
-- [] P Value - Shannon
+- [ ] Z-Score - Nicole
+- [ ] Population Correlation Coefficient - Nicole
+- [ ] Confidence Interval - Nicole
+- [X] Population Variance - Nicole
+- [ ] P Value - Shannon
 - [X] Proportion - Shannon
 - [X] Sample Mean - Shannon
 - [X] Sample Standard Deviation - Shannon
