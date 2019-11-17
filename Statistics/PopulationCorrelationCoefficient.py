@@ -1,5 +1,3 @@
-from typing import Any, Union
-
 from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Statistics.PopulationMean import population_mean
 from Calculators.Calculator import multiplication
