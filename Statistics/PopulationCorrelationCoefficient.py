@@ -18,6 +18,7 @@ def pop_correlation_coefficient(data_x, data_y):
 
     for index, item in enumerate(a):
         product = a[index] * b[index]
+        product = int(product)
         # index += 1
         # print(index, product)
 
@@ -26,7 +27,9 @@ def pop_correlation_coefficient(data_x, data_y):
         total.append(z)
         print(total)
 
-    covariance = division(z, total)
+    sum_total = sum(total)
+
+    covariance = division(z, sum_total)
 
     # Population Correlation Coefficient calculation:
     d = division(divisor, covariance)
