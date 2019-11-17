@@ -6,9 +6,7 @@ from Calculators.Multiplication import multiplication
 
 
 def var_sample_proportion(data):
-    data = [num for elem in data for num in elem]
-    new_data = [float(x) for x in data]
-    sample_data = new_data[0:999]
+    sample_data = data[0:999]
     samp_prop_data = []
     for x in sample_data:
         if x > 64:

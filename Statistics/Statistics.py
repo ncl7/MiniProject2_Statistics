@@ -1,5 +1,5 @@
 from Calculators.Calculator import Calculator
-from Statistics.ZScore import z_score
+from Statistics.Z_Score import z_score
 from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Statistics.ConfidenceInterval import confidence_interval
 from Statistics.PopulationVariance import population_variance
@@ -12,8 +12,8 @@ from Statistics.SampleVariance import var_sample_proportion
 from Statistics.SampleMean import sampleMean
 from Statistics.Pvalue import p_value
 from Statistics.SampleStandardDeviation import sample_st_dev
+from Statistics.PopulationCorrelationCoefficient import pop_correlation_coefficient
 from CSVReader.CSVReader import CsvReader
-
 
 class Statistics(Calculator):
     data = []
@@ -55,8 +55,8 @@ class Statistics(Calculator):
         self.result = population_variance(data)
         return self.result
 
-    def pop_correlation_coefficient(self, data):
-        self.result = population_variance(data)
+    def pop_correlation_coefficient(self, data_x, data_y):
+        self.result = pop_correlation_coefficient(data_x, data_y)
         return self.result
 
     def proportion(self, data):
