@@ -1,3 +1,5 @@
+from typing import Any, Union
+
 from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Statistics.PopulationMean import population_mean
 from Calculators.Calculator import multiplication
@@ -16,22 +18,12 @@ def pop_correlation_coefficient(data_x, data_y):
     a = [(element - d) for element in data_x]
     b = [(element - e) for element in data_y]
 
-    for index, item in enumerate(a):
-        product = a[index] * b[index]
-        product = int(product)
-        # index += 1
-        # print(index, product)
-
-    total = []
-    for n in range(product):
-        total.append(z)
-        print(total)
-
-    sum_total = sum(total)
-
-    covariance = division(z, sum_total)
+    product = [a[i] * b[i] for i in range(len(a))]
+    total = sum(product)
+    print(total)
+    covariance = division(z, total)
+    print(covariance)
 
     # Population Correlation Coefficient calculation:
     d = division(divisor, covariance)
-    print(d)
     return d
