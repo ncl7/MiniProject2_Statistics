@@ -17,9 +17,7 @@ def pop_correlation_coefficient(data_x, data_y):
     size = len(a)
     product = [a[i] * b[i] for i in range(size)]
     total = sum(product)
-    print(total)
     covariance = division(size, total)
-    print(covariance)
 
     # Population Correlation Coefficient calculation:
     d = division(divisor, covariance)
