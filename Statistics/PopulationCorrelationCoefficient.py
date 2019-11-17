@@ -15,12 +15,19 @@ def pop_correlation_coefficient(data_x, data_y):
     e = population_mean(data_y)
     a = [(element - d) for element in data_x]
     b = [(element - e) for element in data_y]
+
     for index, item in enumerate(a):
         product = a[index] * b[index]
-        index += 1
-        print(index, product)
+        # index += 1
+        # print(index, product)
 
-    covariance = division(z, product)
+    total = []
+    for n in range(product):
+        total.append(z)
+        print(total)
+
+    covariance = division(z, total)
+
     # Population Correlation Coefficient calculation:
     d = division(divisor, covariance)
     print(d)
