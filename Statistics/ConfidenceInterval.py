@@ -15,9 +15,12 @@ def confidence_interval(data):
     x = len(data)
     y = division(square_root(x), sd)
     margin_of_error = multiplication(z_value, y)
-    a = subtraction(mean, margin_of_error)
-    b = addition(mean, margin_of_error)
-    array = []
-    c = array[a, b]
+    a = [subtraction(mean, margin_of_error)]
+    b = [addition(mean, margin_of_error)]
+    size = len(a)
+    # array = []
+    # c = array[int(a), int(b)]
+    c = [(a[i], b[i]) for i in range(size)]
+    print(c)
     return c
 
