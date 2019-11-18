@@ -1,4 +1,4 @@
-from Statistics.SampleMean import sampleMean
+from Statistics.PopulationMean import population_mean
 from Statistics.PopulationStandardDeviation import pop_stand_dev
 from Calculators.Division import division
 from Calculators.SquareRoot import square_root
@@ -10,7 +10,7 @@ from Calculators.Addition import addition
 def confidence_interval(data):
     # For a Confidence Interval of 95%
     z_value = 1.960
-    mean = sampleMean(data)
+    mean = population_mean(data)
     sd = pop_stand_dev(data)
     x = len(data)
     y = division(square_root(x), sd)
