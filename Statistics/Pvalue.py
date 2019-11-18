@@ -2,11 +2,8 @@ from Statistics.Z_Score import z_score
 
 
 def p_value(data):
-    # data = [data]
-    n = len(data)
     score = z_score(data)
-    # score = 0.56425684
-    for index in range(n):
-        if n == score:
-            data.append(index)
-    return index
+    value = [float(x) for x in data]
+    if value == score[0]:
+        return value
+    print(value)
