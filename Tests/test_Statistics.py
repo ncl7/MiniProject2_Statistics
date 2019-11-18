@@ -1,6 +1,7 @@
 import unittest
 from CSVReader.CSVReader import CsvReader
 from CSVReader.CSVStatsReader import CsvReaderStats
+from CSVReader.CSVNormalReader import CsvNormalReader
 from Statistics.Statistics import Statistics
 from pprint import pprint
 
@@ -76,10 +77,10 @@ class MyTestCase(unittest.TestCase):
             #self.assertEqual(self.statistics.result, test_result(row['Variance of Sample Proportion']))
 
     def test_p_value(self):
-        test_data = CsvReaderStats('Tests/Data/female_height.csv').data
+        test_data = CsvNormalReader('Tests/Data/normal_dist.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
-        for row in test_result:
-            self.assertEqual(self.statistics.p_value(test_data), float(row['P Value']))
+        for row in test_data:
+            self.assertEqual(self.statistics.p_value(test_data), test_result(row['P Value']))
             #self.assertEqual(self.statistics.result, test_result(row['P Value']))
 
     def test_z_score(self):
