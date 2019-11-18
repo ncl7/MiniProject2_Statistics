@@ -19,5 +19,5 @@ def confidence_interval(data):
     b = [addition(mean, margin_of_error)]
     size = len(a)
     c = [(a[i], b[i]) for i in range(size)]
-    return round(c, 4)
+    return c
 
