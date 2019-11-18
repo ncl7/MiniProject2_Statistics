@@ -93,13 +93,13 @@ class MyTestCase(unittest.TestCase):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
         test_result = CsvReader('Tests/Data/Results_Statistics_Calc.csv').data
         for row in test_result:
-            self.assertEqual(self.statistics.confidence_interval(test_data[0]),
-                             float(row['Confidence Interval (Lower)']))
-            self.assertEqual(self.statistics.confidence_interval(test_data[1]),
-                             float(row['Confidence Interval (Upper)']))
-            self.assertEqual(self.statistics.result, test_result(row['Confidence Interval (Lower)'], row['Confidence '
-                                                                                                         'Interval ('
-                                                                                                         'Upper)']))
+            self.assertEqual(self.statistics.confidence_interval(test_data),
+                               float(row['Confidence Interval (Lower)']))
+            self.assertEqual(self.statistics.confidence_interval(test_data),
+                               float(row['Confidence Interval (Upper)']))
+            # self.assertEqual(self.statistics.result, test_result(row['Confidence Interval (Lower)'], row['Confidence '
+            #                                                                                             'Interval ('
+            #                                                                                             'Upper)']))
 
     def test_population_variance(self):
         test_data = CsvReaderStats('Tests/Data/female_height.csv').data
