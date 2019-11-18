@@ -18,6 +18,9 @@ def confidence_interval(data):
     a = [subtraction(mean, margin_of_error)]
     b = [addition(mean, margin_of_error)]
     size = len(a)
-    c = [(a[i], b[i]) for i in range(size)]
-    return c
+    # c = [(a[i], b[i]) for i in range(size)]
+    lower = a[0]
+    upper = b[0]
+    # print(lower, upper)
+    return lower, upper
 
