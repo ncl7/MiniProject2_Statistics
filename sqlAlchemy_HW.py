@@ -1,15 +1,10 @@
 from sqlalchemy import create_engine
-
-engine = create_engine('sqlite:///:memory:')
-# using relative path
-engine.connect()
-
-print(engine)
-
 from sqlalchemy import MetaData, Table, String, Column, Text, DateTime, Boolean, Integer
 from datetime import datetime
 
 metadata = MetaData()
+engine = create_engine('sqlite:///:memory:')
+engine.connect()
 
 customers = Table('customers', metadata,
                   Column('id', Integer(), primary_key=True),
@@ -47,3 +42,4 @@ order_lines = Table('order_lines', metadata,
                     )
 
 metadata.create_all(engine)
+print(engine)
