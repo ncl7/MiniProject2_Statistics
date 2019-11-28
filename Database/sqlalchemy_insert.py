@@ -27,3 +27,20 @@ session.commit()
 new_address = Address(post_code='00000', person=new_person)
 session.add(new_address)
 session.commit()
+
+# Make a query to find all Persons in the database
+session.query(Person).all()
+
+# Return the first Person from all Persons in the database
+person = session.query(Person).first()
+person.name
+u'new person'
+
+# Find all Address whose person field is pointing to the person object
+session.query(Address).filter(Address.person == person).all()
+
+# Retrieve one Address whose person field is point to the person object
+session.query(Address).filter(Address.person == person).one()
+address = session.query(Address).filter(Address.person == person).one()
+address.post_code
+u'00000'
