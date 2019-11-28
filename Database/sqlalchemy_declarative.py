@@ -28,8 +28,8 @@ class Address(Base):
     person = relationship(Person)
 
 
-# Create an engine that stores data in the local directory's example.db file.
-engine = create_engine('sqlite:///example.db')
+# Create an engine that stores data in the local directory's sqlalchemy_example.db file.
+engine = create_engine('sqlite:///sqlalchemy_example.db')
 
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.
