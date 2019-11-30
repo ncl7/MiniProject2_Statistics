@@ -231,3 +231,7 @@ session.query(Order).first()
 session.query(Customer).get(1)
 session.query(Item).get(1)
 session.query(Order).get(100)
+
+# Querying Data with the filter() method
+session.query(Customer).filter(Customer.first_name == 'John').all()
+print(session.query(Customer).filter(Customer.first_name == 'John'))
