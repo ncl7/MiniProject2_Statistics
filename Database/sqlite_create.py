@@ -36,8 +36,7 @@ class Item(Base):
     name = Column(String(200), nullable=False)
     cost_price = Column(Numeric(10, 2), nullable=False)
     selling_price = Column(Numeric(10, 2), nullable=False)
-
-
+    quantity = Column(SmallInteger(), nullable=False)
 #     orders = relationship("Order", backref='customer')
 
 
