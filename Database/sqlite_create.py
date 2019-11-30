@@ -97,3 +97,7 @@ c2 = Customer(
              )
 
 c1, c2
+
+c1.first_name, c1.last_name
+c2.first_name, c2.last_name
+
