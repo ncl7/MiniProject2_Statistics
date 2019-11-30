@@ -207,3 +207,4 @@ for ol in c1.orders[1].order_lines:
 session.query(Customer).all()
 session.query(Item).all()
 session.query(Order).all()
+print(session.query(Customer))
