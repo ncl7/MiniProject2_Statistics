@@ -288,3 +288,10 @@ session.query(Item).filter(Item.name.ilike("w%")).all()
 
 # NOT LIKE
 session.query(Item).filter(not_(Item.name.like("W%"))).all()
+
+# Querying Data with the limit() method
+session.query(Customer).limit(2).all()
+session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2).all()
+print(session.query(Customer).limit(2))
+print(session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2))
+
