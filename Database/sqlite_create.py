@@ -194,3 +194,4 @@ c1.orders
 
 o1.customer
 
+c1.orders[0].order_lines, c1.orders[1].order_lines
