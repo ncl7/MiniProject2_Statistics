@@ -208,3 +208,8 @@ session.query(Customer).all()
 session.query(Item).all()
 session.query(Order).all()
 print(session.query(Customer))
+
+q = session.query(Customer)
+
+for c in q:
+    print(c.id, c.first_name)
