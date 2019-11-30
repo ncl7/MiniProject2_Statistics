@@ -45,12 +45,18 @@ class Item(Base):
     __table_args__ = (
         CheckConstraint('quantity > 0', name='quantity_check'),)
 
+
 class Order(Base):
     __tablename__ = 'orders'
     id = Column(Integer(), primary_key=True)
     customer_id = Column(Integer(), ForeignKey('customers.id'))
-    date_placed = Column(DateTime(), default=datetime.now)
-    line_items = relationship("OrderLine", secondary="order_lines", backref='order')
+    date_placed = Column(DateTime(), default=datetime.now, nullable=False)
+    date_shipped = Column(DateTime())
+
+    #     items = relationship("OrderLine")
+
+    def __repr__(self):
+        return "<Order:{0}>".format(self.id)
 
 
 class OrderLine(Base):
