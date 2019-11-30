@@ -73,3 +73,4 @@ class OrderLine(Base):
 
 
 Base.metadata.create_all(engine)
+# Base.metadata.drop_all(engine)
