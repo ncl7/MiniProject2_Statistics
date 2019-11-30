@@ -65,7 +65,11 @@ class OrderLine(Base):
     order_id = Column(Integer(), ForeignKey('orders.id'))
     item_id = Column(Integer(), ForeignKey('items.id'))
     quantity = Column(SmallInteger())
+    order = relationship("Order", backref='order_lines')
     item = relationship("Item")
+
+    def __repr__(self):
+        return "<OrderLine:{0}>".format(self.id)
 
 
 Base.metadata.create_all(engine)
