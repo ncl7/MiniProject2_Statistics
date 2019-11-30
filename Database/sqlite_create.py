@@ -40,7 +40,8 @@ class Item(Base):
     cost_price = Column(Numeric(10, 2), nullable=False)
     selling_price = Column(Numeric(10, 2), nullable=False)
     quantity = Column(SmallInteger(), nullable=False)
-#     orders = relationship("Order", backref='customer')
+
+    #     orders = relationship("Order", backref='customer')
 
     def __repr__(self):
         return "<Item:{0}-{1}>".format(self.id, self.name)
@@ -79,25 +80,26 @@ Base.metadata.create_all(engine)
 # Base.metadata.drop_all(engine)
 
 from sqlalchemy.orm import sessionmaker, Session
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
-c1 = Customer(first_name = 'John',
-              last_name = 'Green',
-              username = 'johngreen',
-              email = 'johngreen@mail.com',
-              address = '164 Hidden Valley Road',
-              town = 'Norfolk'
-             )
+c1 = Customer(first_name='John',
+              last_name='Green',
+              username='johngreen',
+              email='johngreen@mail.com',
+              address='164 Hidden Valley Road',
+              town='Norfolk'
+              )
 
 c2 = Customer(
-            first_name = 'Katherine',
-            last_name = 'Wilson',
-            username = 'katwilson',
-            email = 'katwilson@gmail.com',
-            address = '4685 West Side Avenue',
-            town = 'Peterbrugh'
-             )
+            first_name='Katherine',
+            last_name='Wilson',
+            username='katwilson',
+            email='katwilson@gmail.com',
+            address='4685 West Side Avenue',
+            town='Peterbrugh'
+            )
 
 c1, c2
 
@@ -115,39 +117,38 @@ c1.id, c2.id
 c1.orders, c2.orders
 
 c3 = Customer(
-            first_name = "John",
-            last_name = "Lara",
-            username = "johnlara",
-            email = "johnlara@mail.com",
-            address = "3073 Derek Drive",
-            town = "Norfolk"
+    first_name="John",
+    last_name="Lara",
+    username="johnlara",
+    email="johnlara@mail.com",
+    address="3073 Derek Drive",
+    town="Norfolk"
 )
 
 c4 = Customer(
-            first_name = "Sarah",
-            last_name = "Tomlin",
-            username = "sarahtomlin",
-            email = "sarahtomlin@mail.com",
-            address = "3572 Poplar Avenue",
-            town = "Norfolk"
+    first_name="Sarah",
+    last_name="Tomlin",
+    username="sarahtomlin",
+    email="sarahtomlin@mail.com",
+    address="3572 Poplar Avenue",
+    town="Norfolk"
 )
 
-c5 = Customer(first_name = 'Toby',
-              last_name = 'Miller',
-              username = 'tmiller',
-              email = 'tmiller@example.com',
-              address = '1662 Kinney Street',
-              town = 'Wolfden'
-             )
+c5 = Customer(first_name='Toby',
+              last_name='Miller',
+              username='tmiller',
+              email='tmiller@example.com',
+              address='1662 Kinney Street',
+              town='Wolfden'
+              )
 
-c6 = Customer(first_name = 'Scott',
-              last_name = 'Harvey',
-              username = 'scottharvey',
-              email = 'scottharvey@example.com',
-              address = '424 Patterson Street',
-              town = 'Beckinsdale'
-             )
+c6 = Customer(first_name='Scott',
+              last_name='Harvey',
+              username='scottharvey',
+              email='scottharvey@example.com',
+              address='424 Patterson Street',
+              town='Beckinsdale'
+              )
 
 session.add_all([c3, c4, c5, c6])
 session.commit()
-
