@@ -145,3 +145,6 @@ c6 = Customer(first_name = 'Scott',
               town = 'Beckinsdale'
              )
 
+session.add_all([c3, c4, c5, c6])
+session.commit()
+
