@@ -74,3 +74,8 @@ class OrderLine(Base):
 
 Base.metadata.create_all(engine)
 # Base.metadata.drop_all(engine)
+
+from sqlalchemy.orm import sessionmaker, Session
+Session = sessionmaker(bind=engine)
+session = Session()
+
