@@ -27,6 +27,8 @@ class Customer(Base):
     updated_on = Column(DateTime(), default=datetime.now, onupdate=datetime.now)
     orders = relationship("Order", backref='customer')
 
+    def __repr__(self):
+        return "<Customer:{0}-{1}>".format(self.id, self.username)
 
 class Item(Base):
     __tablename__ = 'items'
