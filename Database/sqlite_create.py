@@ -204,6 +204,7 @@ print('-------')
 for ol in c1.orders[1].order_lines:
     ol.id, ol.item, ol.quantity
 
+# Querying Data with the all() method
 session.query(Customer).all()
 session.query(Item).all()
 session.query(Order).all()
@@ -215,3 +216,4 @@ for c in q:
     print(c.id, c.first_name)
 
 session.query(Customer.id, Customer.first_name).all()
+
