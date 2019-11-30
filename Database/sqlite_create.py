@@ -4,7 +4,7 @@ import sqlite3
 conn = sqlite3.connect('/web/Sqlite-Data/example.db')
 
 from sqlalchemy import create_engine, MetaData, Table, Integer, String, \
-    Column, DateTime, ForeignKey, Numeric, SmallInteger
+    Column, DateTime, ForeignKey, Numeric, SmallInteger, CheckConstraint
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
@@ -39,6 +39,11 @@ class Item(Base):
     quantity = Column(SmallInteger(), nullable=False)
 #     orders = relationship("Order", backref='customer')
 
+    def __repr__(self):
+        return "<Item:{0}-{1}>".format(self.id, self.name)
+
+    __table_args__ = (
+        CheckConstraint('quantity > 0', name='quantity_check'),)
 
 class Order(Base):
     __tablename__ = 'orders'
