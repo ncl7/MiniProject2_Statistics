@@ -281,3 +281,6 @@ session.query(Item).filter(Item.cost_price.between(10, 50)).all()
 
 # NOT BETWEEN
 session.query(Item).filter(not_(Item.cost_price.between(10, 50))).all()
+
+# LIKE
+session.query(Item).filter(Item.name.like("%r")).all()
