@@ -316,3 +316,14 @@ session.query(
     Customer.last_name == 'Green',
     Order.id == 1,
 ).all()
+
+# Querying Data with the outerjoin() method
+session.query(
+    Customer.first_name,
+    Order.id,
+).outerjoin(Order).all()
+
+session.query(
+    Customer.first_name,
+    Order.id,
+).outerjoin(Order, full=True).all()
