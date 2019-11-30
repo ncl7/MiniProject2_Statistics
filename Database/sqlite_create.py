@@ -79,3 +79,21 @@ from sqlalchemy.orm import sessionmaker, Session
 Session = sessionmaker(bind=engine)
 session = Session()
 
+c1 = Customer(first_name = 'John',
+              last_name = 'Green',
+              username = 'johngreen',
+              email = 'johngreen@mail.com',
+              address = '164 Hidden Valley Road',
+              town = 'Norfolk'
+             )
+
+c2 = Customer(
+            first_name = 'Katherine',
+            last_name = 'Wilson',
+            username = 'katwilson',
+            email = 'katwilson@gmail.com',
+            address = '4685 West Side Avenue',
+            town = 'Peterbrugh'
+             )
+
+c1, c2
