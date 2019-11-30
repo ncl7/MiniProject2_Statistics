@@ -235,3 +235,7 @@ session.query(Order).get(100)
 # Querying Data with the filter() method
 session.query(Customer).filter(Customer.first_name == 'John').all()
 print(session.query(Customer).filter(Customer.first_name == 'John'))
+
+session.query(Customer).filter(Customer.id <= 5, Customer.town == "Norfolk").all()
+print(session.query(Customer).filter(Customer.id <= 5, Customer.town.like("Nor%")))
+
