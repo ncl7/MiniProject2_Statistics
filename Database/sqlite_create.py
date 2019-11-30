@@ -275,3 +275,6 @@ session.query(Customer).filter(Customer.first_name.in_(['Toby', 'Sarah'])).all()
 
 # NOT IN
 session.query(Customer).filter(Customer.first_name.notin_(['Toby', 'Sarah'])).all()
+
+# BETWEEN
+session.query(Item).filter(Item.cost_price.between(10, 50)).all()
