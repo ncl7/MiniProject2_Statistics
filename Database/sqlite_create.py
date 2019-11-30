@@ -430,3 +430,6 @@ def dispatch_order(order_id):
         print("Rolling back ...")
         session.rollback()
         print("Transaction failed.")
+
+dispatch_order(1)
+dispatch_order(2)
