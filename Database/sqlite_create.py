@@ -218,7 +218,7 @@ for c in q:
 session.query(Customer.id, Customer.first_name).all()
 
 # Querying Data with the count() method
-session.query(Customer).count() # get the total number of records in the customers table
+session.query(Customer).count()  # get the total number of records in the customers table
 session.query(Item).count()  # get the total number of records in the items table
 session.query(Order).count()  # get the total number of records in the orders table
 
@@ -248,14 +248,12 @@ session.query(Customer).filter(or_(
     Customer.town == 'Norfolk'
 )).all()
 
-
 # find all customers whose first name is John and live in Norfolk
 
 session.query(Customer).filter(and_(
     Customer.first_name == 'John',
     Customer.town == 'Norfolk'
 )).all()
-
 
 # find all johns who don't live in Peterbrugh
 
@@ -265,3 +263,6 @@ session.query(Customer).filter(and_(
         Customer.town == 'Peterbrugh',
     )
 )).all()
+
+# IS NULL
+session.query(Order).filter(Order.date_shipped == None).all()
