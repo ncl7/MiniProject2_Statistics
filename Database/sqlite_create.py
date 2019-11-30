@@ -336,3 +336,9 @@ session.query(func.count(Customer.id)).join(Order).filter(
     Customer.last_name == 'Green',
 ).group_by(Customer.id).scalar()
 
+# Querying Data with the having() method
+# find the number of customers who lives in each town
+session.query(
+    func.count("*").label('town_count'),
+    Customer.town
+).group_by(Customer.town).having(func.count("*") > 2).all()
