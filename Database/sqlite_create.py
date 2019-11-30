@@ -266,3 +266,10 @@ session.query(Customer).filter(and_(
 
 # IS NULL
 session.query(Order).filter(Order.date_shipped == None).all()
+
+# IS NOT NULL
+session.query(Order).filter(Order.date_shipped != None).all()
+
+# IN
+session.query(Customer).filter(Customer.first_name.in_(['Toby', 'Sarah'])).all()
+
