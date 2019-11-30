@@ -363,3 +363,9 @@ session.query(
     cast("2010-12-01", Date),
 ).all()
 
+# Unions
+s1 = session.query(Item.id, Item.name).filter(Item.name.like("Wa%"))
+s2 = session.query(Item.id, Item.name).filter(Item.name.like("%e%"))
+s1.union(s2).all()
+s1.union_all(s2).all()
+
