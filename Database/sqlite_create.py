@@ -278,3 +278,6 @@ session.query(Customer).filter(Customer.first_name.notin_(['Toby', 'Sarah'])).al
 
 # BETWEEN
 session.query(Item).filter(Item.cost_price.between(10, 50)).all()
+
+# NOT BETWEEN
+session.query(Item).filter(not_(Item.cost_price.between(10, 50))).all()
