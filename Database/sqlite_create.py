@@ -101,20 +101,20 @@ c2 = Customer(
     town='Peterbrugh'
 )
 
-c1, c2
+# c1, c2
 
-c1.first_name, c1.last_name
-c2.first_name, c2.last_name
+# c1.first_name, c1.last_name
+# c2.first_name, c2.last_name
 
-session.add_all([c1, c2])
+# session.add_all([c1, c2])
 
-session.new
+# session.new
 
-session.commit()
+# session.commit()
 
-c1.id, c2.id
+# c1.id, c2.id
 
-c1.orders, c2.orders
+# c1.orders, c2.orders
 
 c3 = Customer(
     first_name="John",
@@ -166,7 +166,7 @@ session.add_all([i1, i2, i3, i4, i5, i6, i7, i8])
 session.commit()
 
 o1 = Order(customer=c1)
-o2 = Order(customer=c1)
+o2 = Order(customer=c2)
 
 order_line1 = OrderLine(order=o1, item=i1, quantity=3)
 order_line2 = OrderLine(order=o1, item=i2, quantity=2)
@@ -175,22 +175,22 @@ order_line4 = OrderLine(order=o2, item=i2, quantity=4)
 
 session.add_all([o1, o2])
 
-session.new
+# session.new
 session.commit()
 
-o3 = Order(customer=c1)
+o3 = Order(customer=c3)
 
-orderline1 = OrderLine(item=i1, quantity=5)
-orderline2 = OrderLine(item=i2, quantity=10)
+# orderline1 = OrderLine(item=i1, quantity=5)
+# orderline2 = OrderLine(item=i2, quantity=10)
 
-o3.order_lines.append(orderline1)
-o3.order_lines.append(orderline2)
+# o3.order_lines.append(orderline1)
+# o3.order_lines.append(orderline2)
 
-session.add_all([o3])
+# session.add_all([o3])
 
 session.commit()
 
-c1.orders
+# c1.orders
 
 o1.customer
 
@@ -302,31 +302,31 @@ from sqlalchemy import desc
 session.query(Item).filter(Item.name.ilike("wa%")).order_by(desc(Item.cost_price)).all()
 
 # Querying Data with the join() method
-session.query(Customer).join(Order).all()
-print(session.query(Customer).join(Order))
-session.query(Customer.id, Customer.username, Order.id).join(Order).all()
+# session.query(Customer).join(Order).all()
+# print(session.query(Customer).join(Order))
+# session.query(Customer.id, Customer.username, Order.id).join(Order).all()
 
-session.query(
-    Customer.first_name,
-    Item.name,
-    Item.selling_price,
-    OrderLine.quantity
-).join(Order).join(OrderLine).join(Item).filter(
-    Customer.first_name == 'John',
-    Customer.last_name == 'Green',
-    Order.id == 1,
-).all()
+# session.query(
+#     Customer.first_name,
+#     Item.name,
+#     Item.selling_price,
+#     OrderLine.quantity
+# ).join(Order).join(OrderLine).join(Item).filter(
+#     Customer.first_name == 'John',
+#     Customer.last_name == 'Green',
+#     Order.id == 1,
+# ).all()
 
 # Querying Data with the outerjoin() method
-session.query(
-    Customer.first_name,
-    Order.id,
-).outerjoin(Order).all()
+# session.query(
+#     Customer.first_name,
+#     Order.id,
+# ).outerjoin(Order).all()
 
-session.query(
-    Customer.first_name,
-    Order.id,
-).outerjoin(Order, full=True).all()
+# session.query(
+#     Customer.first_name,
+#     Order.id,
+# ).outerjoin(Order, full=True).all()
 
 # Querying Data with the group_by() method
 from sqlalchemy import func
@@ -345,8 +345,8 @@ session.query(
 
 from sqlalchemy import distinct
 
-session.query(Customer.town).filter(Customer.id  < 10).all()
-session.query(Customer.town).filter(Customer.id  < 10).distinct().all()
+session.query(Customer.town).filter(Customer.id<10).all()
+session.query(Customer.town).filter(Customer.id<10).distinct().all()
 
 session.query(
     func.count(distinct(Customer.town)),
@@ -382,7 +382,6 @@ session.commit()
 
 # Deleting Data
 i = session.query(Item).filter(Item.name == 'Monitor').one()
-i
 session.delete(i)
 session.commit()
 
