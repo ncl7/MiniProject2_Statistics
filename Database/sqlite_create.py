@@ -101,7 +101,7 @@ c2 = Customer(
     town='Peterbrugh'
 )
 
-c1, c2
+# c1, c2
 
 c1.first_name, c1.last_name
 c2.first_name, c2.last_name
@@ -165,8 +165,8 @@ i8 = Item(name='Water Bottle', cost_price=20.89, selling_price=25, quantity=50)
 session.add_all([i1, i2, i3, i4, i5, i6, i7, i8])
 session.commit()
 
-o1 = Order(c1)
-o2 = Order(c2)
+o1 = Order(customer=c1)
+o2 = Order(customer=c1)
 
 order_line1 = OrderLine(order=o1, item=i1, quantity=3)
 order_line2 = OrderLine(order=o1, item=i2, quantity=2)
@@ -178,7 +178,7 @@ session.add_all([o1, o2])
 # session.new
 session.commit()
 
-o3 = Order(c3)
+o3 = Order(customer=c1)
 
 orderline1 = OrderLine(item=i1, quantity=5)
 orderline2 = OrderLine(item=i2, quantity=10)
