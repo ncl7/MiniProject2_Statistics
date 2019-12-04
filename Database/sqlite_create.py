@@ -29,9 +29,6 @@ class Customer(Base):
     updated_on = Column(DateTime(), default=datetime.now, onupdate=datetime.now)
     orders = relationship("Order", backref='customer')
 
-    def __repr__(self):
-        return "<Customer:{0}-{1}>".format(self.id, self.username)
-
 
 class Item(Base):
     __tablename__ = 'items'
@@ -43,13 +40,6 @@ class Item(Base):
 
     #     orders = relationship("Order", backref='customer')
 
-    def __repr__(self):
-        return "<Item:{0}-{1}>".format(self.id, self.name)
-
-    __table_args__ = (
-        CheckConstraint('quantity > 0', name='quantity_check'),)
-
-
 class Order(Base):
     __tablename__ = 'orders'
     id = Column(Integer(), primary_key=True)
@@ -58,10 +48,6 @@ class Order(Base):
     date_shipped = Column(DateTime())
 
     #     items = relationship("OrderLine")
-
-    def __repr__(self):
-        return "<Order:{0}>".format(self.id)
-
 
 class OrderLine(Base):
     __tablename__ = 'order_lines'
@@ -72,9 +58,6 @@ class OrderLine(Base):
     order = relationship("Order", backref='order_lines')
     item = relationship("Item")
 
-    def __repr__(self):
-        return "<OrderLine:{0}>".format(self.id)
-
 
 Base.metadata.create_all(engine)
 # Base.metadata.drop_all(engine)
@@ -84,21 +67,21 @@ from sqlalchemy.orm import sessionmaker, Session
 Session = sessionmaker(bind=engine)
 session = Session()
 
-c1 = Customer(first_name = 'Toby',
-              last_name = 'Miller',
-              username = 'tmiller',
-              email = 'tmiller@example.com',
-              address = '1662 Kinney Street',
-              town = 'Wolfden'
-             )
+c1 = Customer(first_name='Toby',
+              last_name='Miller',
+              username='tmiller',
+              email='tmiller@example.com',
+              address='1662 Kinney Street',
+              town='Wolfden'
+              )
 
-c2 = Customer(first_name = 'Scott',
-              last_name = 'Harvey',
-              username = 'scottharvey',
-              email = 'scottharvey@example.com',
-              address = '424 Patterson Street',
-              town = 'Beckinsdale'
-             )
+c2 = Customer(first_name='Scott',
+              last_name='Harvey',
+              username='scottharvey',
+              email='scottharvey@example.com',
+              address='424 Patterson Street',
+              town='Beckinsdale'
+              )
 
 c1, c2
 
@@ -302,6 +285,7 @@ print(session.query(Customer).limit(2).offset(2))
 session.query(Item).filter(Item.name.ilike("wa%")).all()
 session.query(Item).filter(Item.name.ilike("wa%")).order_by(Item.cost_price).all()
 from sqlalchemy import desc
+
 session.query(Item).filter(Item.name.ilike("wa%")).order_by(desc(Item.cost_price)).all()
 
 # Querying Data with the join() method
@@ -351,8 +335,8 @@ session.query(
 # Dealing with Duplicates
 from sqlalchemy import distinct
 
-session.query(Customer.town).filter(Customer.id<10).all()
-session.query(Customer.town).filter(Customer.id<10).distinct().all()
+session.query(Customer.town).filter(Customer.id < 10).all()
+session.query(Customer.town).filter(Customer.id < 10).distinct().all()
 
 session.query(
     func.count(distinct(Customer.town)),
