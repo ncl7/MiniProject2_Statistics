@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kelleyshann/MiniProject2_Statistics.svg?branch=master)](https://travis-ci.org/kelleyshann/MiniProject2_Statistics)
+[![Build Status](https://travis-ci.org/kelleyjean/MiniProject2_Statistics.svg?branch=master)](https://travis-ci.org/kelleyjean/MiniProject2_Statistics)
 
 # MiniProject2_Statistics
 Mini Project 2 - Statistics Calculations (Kelley, Nicole, Shannon)
