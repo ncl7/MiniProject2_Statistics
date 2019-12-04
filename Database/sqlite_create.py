@@ -84,32 +84,35 @@ from sqlalchemy.orm import sessionmaker, Session
 Session = sessionmaker(bind=engine)
 session = Session()
 
-c1 = Customer(first_name='John',
-              last_name='Green',
-              username='johngreen',
-              email='johngreen@mail.com',
-              address='164 Hidden Valley Road',
-              town='Norfolk'
-              )
+c1 = Customer(first_name = 'Toby',
+              last_name = 'Miller',
+              username = 'tmiller',
+              email = 'tmiller@example.com',
+              address = '1662 Kinney Street',
+              town = 'Wolfden'
+             )
 
-c2 = Customer(
-    first_name='Katherine',
-    last_name='Wilson',
-    username='katwilson',
-    email='katwilson@gmail.com',
-    address='4685 West Side Avenue',
-    town='Peterbrugh'
-)
+c2 = Customer(first_name = 'Scott',
+              last_name = 'Harvey',
+              username = 'scottharvey',
+              email = 'scottharvey@example.com',
+              address = '424 Patterson Street',
+              town = 'Beckinsdale'
+             )
 
-# c1, c2
+c1, c2
 
 c1.first_name, c1.last_name
 c2.first_name, c2.last_name
 
+session.add(c1)
+session.add(c2)
+
+c1.id, c2.id
+
 session.add_all([c1, c2])
 
 session.new
-
 session.commit()
 
 c1.id, c2.id
@@ -175,11 +178,10 @@ order_line4 = OrderLine(order=o2, item=i2, quantity=4)
 
 session.add_all([o1, o2])
 
-# session.new
+session.new
 session.commit()
 
 o3 = Order(customer=c1)
-
 orderline1 = OrderLine(item=i1, quantity=5)
 orderline2 = OrderLine(item=i2, quantity=10)
 
@@ -206,8 +208,7 @@ for ol in c1.orders[1].order_lines:
 
 # Querying Data with the all() method
 session.query(Customer).all()
-session.query(Item).all()
-session.query(Order).all()
+
 print(session.query(Customer))
 
 q = session.query(Customer)
@@ -292,8 +293,10 @@ session.query(Item).filter(not_(Item.name.like("W%"))).all()
 # Querying Data with the limit() method
 session.query(Customer).limit(2).all()
 session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2).all()
-print(session.query(Customer).limit(2))
-print(session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2))
+
+# Querying Data with the offset() method
+session.query(Customer).limit(2).offset(2).all()
+print(session.query(Customer).limit(2).offset(2))
 
 # Querying Data with the order_by() method
 session.query(Item).filter(Item.name.ilike("wa%")).all()
@@ -305,6 +308,7 @@ session.query(Item).filter(Item.name.ilike("wa%")).order_by(desc(Item.cost_price
 # session.query(Customer).join(Order).all()
 # print(session.query(Customer).join(Order))
 # session.query(Customer.id, Customer.username, Order.id).join(Order).all()
+# session.query(Table1).join(Table2).join(Table3).join(Table4).all()
 
 # session.query(
 #     Customer.first_name,
@@ -338,11 +342,13 @@ session.query(func.count(Customer.id)).join(Order).filter(
 
 # Querying Data with the having() method
 # find the number of customers who lives in each town
+
 session.query(
     func.count("*").label('town_count'),
     Customer.town
 ).group_by(Customer.town).having(func.count("*") > 2).all()
 
+# Dealing with Duplicates
 from sqlalchemy import distinct
 
 session.query(Customer.town).filter(Customer.id<10).all()
@@ -354,14 +360,14 @@ session.query(
 ).all()
 
 # Casting
-from sqlalchemy import cast, Date, union
+# from sqlalchemy import cast, Date, union
 
-session.query(
-    cast(func.pi(), Integer),
-    cast(func.pi(), Numeric(10,2)),
-    cast("2010-12-01", DateTime),
-    cast("2010-12-01", Date),
-).all()
+# session.query(
+#     cast(func.pi(), Integer),
+#     cast(func.pi(), Numeric(10,2)),
+#     cast("2010-12-01", DateTime),
+#     cast("2010-12-01", Date),
+# ).all()
 
 # Unions
 s1 = session.query(Item.id, Item.name).filter(Item.name.like("Wa%"))
