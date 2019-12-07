@@ -1,6 +1,13 @@
-version: '2'
+version: '3.5'
 services:
-    app:
-        build: .
+    database:
+        container_name: postgres
+        image: postgres:latest
+        env_file: database.conf
+        ports:
+            - 5432:5432
         volumes:
-            - .:/web
+            - db_volume:/var/lib/postgresql
+
+volumes:
+    db_volume:
